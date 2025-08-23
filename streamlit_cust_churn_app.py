@@ -23,7 +23,7 @@ col1, col2, col3 = st.columns(3, gap="large")
 with col1:
     st.subheader("👤 Customer Profile")
     surname = st.text_input("Surname (optional)", "")
-    age = st.slider("Age", min_value=18, max_value=92, value=30)
+    age = st.number_input("Age", min_value=18, max_value=92, value=30)
     gender = st.radio("Gender", ["Male", "Female"])
     geography = st.selectbox("Geography", ["France", "Germany", "Spain"])
 
@@ -162,4 +162,5 @@ if st.button("Predict Customer Churn"):
     with col2:
         st.metric(label="Churn Probability", value=f"{proba_churn:.0%}")
         st.progress(int(proba_churn * 100))
+
 
